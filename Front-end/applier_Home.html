@@ -1,0 +1,75 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <title>Applier</title>
+        <meta name="project" content="Technology Inquiry Project"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="./css/css_class.css">
+    </head>
+    <body>
+        <!-- header -->
+        <div class="header container">     
+            <p id="corpu"> <span id="c">Corp</span><span id="u">U</span></p>
+            <p id="title"></p>
+            <hr>
+            <!-- navigation bar -->
+            <nav class="nav_bar">
+                <ul class="">
+                    <li class="list_item_top">
+                        <a class="list_item_content" onclick="getProfile()">Profile</a>
+                    </li>
+                    <li class="list_item_top">
+                        <a class="list_item_content" onclick="getUnit()">Units</a>
+                    </li>
+                    <li class="list_item_top">
+                        <a class="list_item_content" onclick="getAppliedUnit()">Applied Units</a>
+                    </li>
+                    <li class="list_item_top left">
+                        <a class="list_item_content" onclick="logout()">Log out</a>
+                    </li>
+                </ul>
+            </nav>
+
+        </div>
+        <hr>
+        <br>
+        
+
+        <div id="content" class="container">
+            
+        </div>
+
+        <!-- footer -->
+        <br>
+        <br>
+        <hr>
+        <div class="footer">
+            <p id="corpu"> <span id="c">Corp</span><span id="u">U</span></p>
+            <p>
+                <ul>
+                    <li class="list_item_bottom">
+                        <a class="list_item_content" onclick="getProfile()">Profile</a>
+                    </li>
+                    <li class="list_item_bottom">
+                        <a class="list_item_content" onclick="getUnit()">Units</a>
+                    </li>
+                    <li class="list_item_bottom">
+                        <a class="list_item_content" onclick="getAppliedUnit()">Applied Units</a>
+                    </li>
+                </ul>
+            </p>
+        </div>              
+    </body>
+
+    <script src="./javascript/applierProfile.js"></script>
+    <script src="./javascript/unit.js"></script>
+    <script src="./javascript/appliedUnit.js"></script>
+    <script src="./javascript/applier.js"></script>
+
+</html>
