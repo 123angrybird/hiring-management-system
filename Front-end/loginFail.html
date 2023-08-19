@@ -1,0 +1,21 @@
+<!DOCTYPE>
+<html lang="en">
+    <head>
+        <title>Applier</title>
+        <meta name="project" content="Technology Inquiry Project"/>
+    </head>
+    <body>
+        <h2 id="message"></h2>
+        <h3> <a href="login.html">LOGIN</a> </h3>
+    </body>
+
+    <script>
+        var url = window.location.search.split('?')[1];
+        var parametersURL = new URLSearchParams(url);
+        
+        if (parametersURL.has("message")) {
+            document.getElementById("message").innerHTML = parametersURL.get("message");
+        }
+    </script>
+
+</html>

@@ -1,0 +1,98 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <title>CorpU - Staff</title>
+        <meta name="project" content="Technology Inquiry Project"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        
+        <link rel="stylesheet" href="./css/css_class.css">
+    </head>
+    <body>
+
+        <!-- header -->
+        <div class="header container">
+            <p id="corpu"> <span id="c">Corp</span><span id="u">U</span></p>
+            <p id="title">Applier details</p>
+        </div>
+
+        <!-- unit list -->
+        <div id="unit" class="container">
+            <h3>List of applicants</h3>
+            <div class="table-responsive scroll_table">
+                <table class="table table-bordered table-hover">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Unit code</th>
+                            <th>Unit name</th>
+                            <th>Applier Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody id="data">
+                    
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <hr>
+        <!-- Applier details -->
+        <div id="detail" class="container first">  
+            <!-- Basic details + Contact information -->
+            <h1 id="name">Name</h1>
+            <h6 id="email">Email</h6>
+            <div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Phone</strong>: 
+                        <span id="phone" class="">0213xxxxx</span>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Address</strong>: 
+                        <span id="address" class="">20 Wakefield st</span>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-3">
+                        <strong>Age</strong>: 
+                        <span id="age" class="">23</span>
+                    </div>
+                    <div class="col-md-6">
+                        <strong>Gender</strong>: 
+                        <span id="gender" class="">Male</span>
+                    </div>
+                </div>
+
+                <!-- Applier's qualification -->
+                <br>
+                <div class="row">
+                    <div class="col-md-12">
+                        <strong>Qualification</strong>: 
+                        <span id="qualification" class="">Master of Information Technology (Professional Computing)</span>
+                    </div>
+                </div>
+                
+                <div class="row">
+                    <div class="col-md-12">
+                        <span class=""><strong>Schedule</strong>:</span> <br>
+                        <span id="schedule_text"></span>
+                        <ul id="schedule"></ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- footer -->
+        <div class="footer">
+            <p id="corpu"> <span id="c">Corp</span><span id="u">U</span></p>
+        </div>        
+    </body>
+    <script src="./javascript/getAppliedUnitList.js"></script>
+    <script src="./javascript/getApplierDetail.js"></script>
+</html>
