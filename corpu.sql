@@ -33,9 +33,10 @@ DROP TABLE IF EXISTS `applied_unit`;
 CREATE TABLE IF NOT EXISTS `applied_unit` (
   `applier_id` int(11) NOT NULL,
   `unit_id` varchar(11) NOT NULL,
-  `apply_date` date NOT NULL DEFAULT current_timestamp(),
+  `apply_date` date NOT NULL ,
   PRIMARY KEY (`applier_id`,`unit_id`),
-  KEY `unit_id` (`unit_id`)
+  FOREIGN KEY (`applier_id`) REFERENCES `applier` (`applier_id`),
+  FOREIGN KEY (`unit_id`) REFERENCES `unit` (`unit_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
@@ -58,7 +59,7 @@ INSERT INTO `applied_unit` (`applier_id`, `unit_id`, `apply_date`) VALUES
 
 DROP TABLE IF EXISTS `applier`;
 CREATE TABLE IF NOT EXISTS `applier` (
-  `applierID` int(11) NOT NULL AUTO_INCREMENT,
+  `applier_id` int(11) NOT NULL AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `email` varchar(255) NOT NULL,
   `pass` varchar(255) NOT NULL,
@@ -68,7 +69,7 @@ CREATE TABLE IF NOT EXISTS `applier` (
   `gender` enum('M','F') DEFAULT NULL,
   `qualification` varchar(255) DEFAULT NULL,
   `schedule` varchar(255) DEFAULT NULL,
-  PRIMARY KEY (`applierID`),
+  PRIMARY KEY (`applier_id`),
   UNIQUE KEY `email` (`email`)
 ) ENGINE=InnoDB AUTO_INCREMENT=47 DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -76,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `applier` (
 -- Dumping data for table `applier`
 --
 
-INSERT INTO `applier` (`applierID`, `name`, `email`, `pass`, `phone`, `address`, `age`, `gender`, `qualification`, `schedule`) VALUES
+INSERT INTO `applier` (`applier_id`, `name`, `email`, `pass`, `phone`, `address`, `age`, `gender`, `qualification`, `schedule`) VALUES
 (1, 'Ky Vu', 'vuky9999@gmail.com', '1234567890', '0415739006', '24 Wakefield st', 22, 'M', 'Master of Information Technology (Professional computing)\nmajor in Software Development', 'Monday,Tuesday,Wednesday'),
 (34, 'Join', 'aaa@s.com', '1234567890', '01234567890', '20 aaaaaaaa', 22, 'M', 'Master of IT', 'Monday, Tuesday'),
 (35, 'Ken', 'tts@asd.com', '1234567890', NULL, NULL, NULL, NULL, NULL, NULL),
@@ -118,7 +119,7 @@ INSERT INTO `unit` (`unit_id`, `name`, `description`, `date`, `time`) VALUES
 -- Constraints for table `applied_unit`
 --
 ALTER TABLE `applied_unit`
-  ADD CONSTRAINT `applied_unit_ibfk_1` FOREIGN KEY (`applier_id`) REFERENCES `applier` (`applierID`),
+  ADD CONSTRAINT `applied_unit_ibfk_1` FOREIGN KEY (`applier_id`) REFERENCES `applier` (`applier_id`),
   ADD CONSTRAINT `applied_unit_ibfk_2` FOREIGN KEY (`unit_id`) REFERENCES `unit` (`unit_id`);
 COMMIT;
 

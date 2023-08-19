@@ -15,6 +15,8 @@ exports.register = (req, res) => {
 
     const {name, email, password} = req.body;
 
+
+
     connection.query("INSERT INTO `applier`(`name`, `email`, `pass`) VALUES (?,?,?)", 
         [name, email, password],
         (err, rows) => {
